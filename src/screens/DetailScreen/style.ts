@@ -1,183 +1,157 @@
-import { StyleSheet, Dimensions } from "react-native";
-const { width, height } = Dimensions.get("window");
+import {StyleSheet,Dimensions} from "react-native";
 
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 24,
-    paddingTop: 60,
+const { width } = Dimensions.get("window");
+const imageHeight = width * 0.5;
+
+export const styles = StyleSheet.create({
+  safeArea: {
     flex: 1,
-    position: "relative",
+  },
+  container: {
+    flex: 1,
   },
   header: {
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-between",
-  },
-  backArrow: {
-    fontSize: 24,
-    color: "#242424",
+    alignItems: "center",
+    paddingHorizontal: 16,
+    paddingVertical: 12,
   },
   detailText: {
-    fontSize: 16,
-    fontWeight: 700,
-    lineHeight: 19.2,
-    color: "#242424",
+    fontSize: 17,
+    fontWeight: "bold",
+    color: "#222",
   },
-  heartIcon: {
-    fontSize: 24,
-    color: "#242424",
+  coffeeImage: {
+    width: "94%",
+    height: imageHeight,
+    resizeMode: "cover",
+    borderRadius: 20,
+    marginVertical: 10,
+    alignItems: "center",
+    alignSelf: "center",
   },
-  coffeImage: {
-    width: "100%",
-    borderRadius: 16,
-    marginTop: 20,
+  content: {
+    flex: 1,
+    padding: 16,
   },
   coffeeName: {
-    marginTop: 20,
-    fontSize: 20,
-    fontWeight: 700,
-    lineHeight: 30,
-    color: "#242424",
+    fontSize: 26,
+    fontWeight: "bold",
+    marginBottom: 4,
+    color: "#333",
   },
-  descriptionContainer: {
+  coffeeSubtitle: {
+    fontSize: 16,
+    color: "#777",
+    marginBottom: 8,
+  },
+  ratingAndIconsContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignContent: "flex-start",
+    alignItems: "center",
+    marginBottom: 16,
   },
-  coffeeDescription: {
-    fontSize: 12,
-    fontWeight: 500,
-    lineHeight: 14.4,
-    color: "#A2A2A2",
-  },
-  tipeIconsContainer: {
+  ratingContainer: {
     flexDirection: "row",
-    gap: 4,
+    alignItems: "center",
+  },
+  ratingText: {
+    fontSize: 15,
+    marginLeft: 4,
+    color: "#333",
+  },
+  iconContainer: {
+    flexDirection: "row",
   },
   icon: {
-    padding: 10,
-    backgroundColor: "#EDEDED",
-    color: "#C67C4E",
-    borderRadius: 12,
-    fontSize: 20,
-  },
-  starContainer: {
-    flexDirection: "row",
-    gap: 4,
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    backgroundColor: "#F2EAE2",
+    justifyContent: "center",
     alignItems: "center",
-  },
-  starIcon: {
-    color: "#FBBE21",
-    fontSize: 14,
-  },
-  stars: {
-    fontSize: 16,
-    fontWeight: "700",
-    color: "#2A2A2A",
-  },
-  opinions: {
-    fontSize: 12,
-    fontWeight: "500",
-    color: "#2A2A2A",
-  },
-  line: {
-    backgroundColor: "#E3E3E3",
-    width: width - 10,
-    height: 2,
-    marginTop: 10,
-    marginHorizontal: 10,
-    borderRadius: 5,
+    marginLeft: 8,
   },
   descriptionTitle: {
-    marginTop: 20,
-    fontSize: 16,
-    fontWeight: "700",
-    lineHeight: 24,
-    color: "#2A2A2A",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 8,
+    color: "#333",
   },
-  description: {
-    fontSize: 14,
-    fontWeight: "500",
-    lineHeight: 21,
-    color: "#A2A2A2",
+  descriptionText: {
+    fontSize: 15,
+    color: "#666",
+    lineHeight: 22,
   },
   readMore: {
-    color: "#C67C4E",
-    fontWeight: "700",
+    color: "#A66F52",
+    fontWeight: "bold",
   },
   sizeTitle: {
-    marginTop: 20,
-    fontSize: 16,
-    fontWeight: "700",
-    lineHeight: 24,
-    color: "#2A2A2A",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginTop: 16,
+    marginBottom: 8,
+    color: "#333",
   },
-  sizeList: {
+  sizeButtons: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    gap: 16,
-    marginTop: 10,
+    justifyContent: "flex-start",
   },
-  size: {
-    flex: 1,
-    textAlign: "center",
-    backgroundColor: "white",
-    paddingVertical: 12,
-    borderRadius: 12,
-    fontSize: 16,
-    fontWeight: "500",
-    lineHeight: 24,
-    color: "#2A2A2A",
+  sizeButton: {
+    width: 80,
+    height: 65,
+    borderRadius: 15,
     borderWidth: 1,
-    borderColor: "#E3E3E3",
+    borderColor: "#A66F52",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 10,
+    backgroundColor: "#fff",
   },
-  activeSize: {
-    color: "#C67C4E",
-    backgroundColor: "#F9F2ED",
-    borderColor: "#C67C4E",
+  selectedSizeButton: {
+    backgroundColor: "#A66F52",
   },
-  bottomPanel: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    width: "100%",
-    backgroundColor: "white",
-    borderTopLeftRadius: 22,
-    borderTopRightRadius: 22,
-    paddingHorizontal: 20,
-    paddingTop: 24,
-    paddingBottom: 54,
+  sizeButtonText: {
+    fontSize: 17,
+    color: "#A66F52",
+  },
+  selectedSizeText: {
+    color: "#fff",
+  },
+  bottomBar: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    gap: 66,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderTopWidth: 1,
+    borderTopColor: "#ddd",
+    backgroundColor: "#fff",
   },
-  buyNowButton: {
-    flex: 1,
-    backgroundColor: "#C67C4E",
-    paddingVertical: 16,
-    borderRadius: 16,
+  priceContainer: {
+    flexDirection: "column",
+    paddingLeft: 8,
   },
-  buyNowButtonText: {
-    fontSize: 16,
-    fontWeight: "700",
-    lineHeight: 24,
-    color: "white",
-    textAlign: "center",
-  },
-  pricetitle: {
+  priceLabel: {
     fontSize: 14,
-    fontWeight: "500",
-    lineHeight: 16.8,
-    color: "#909090",
+    color: "#888",
   },
-  price: {
-    fontSize: 18,
-    fontWeight: "700",
-    lineHeight: 27,
-    color: "#C67C4E",
-    marginTop: 4,
+  priceValue: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  buyButton: {
+    backgroundColor: "#A66F52",
+    paddingHorizontal: 80,
+    paddingVertical: 20,
+    borderRadius: 20,
+  },
+  buyButtonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });
-
-export default styles;
